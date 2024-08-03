@@ -7,3 +7,4 @@ env/
 # Ignore any other sensitive files
 *.pyc
 __pycache__/
+".ipynb_checkpoints/" 
