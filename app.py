@@ -41,7 +41,7 @@ def analyze_pdf(file_path):
             "Analyze the following LinkedIn profile and provide a score out of 100. The score should reflect the "
             "overall quality of the profile, including the completeness of the information, the relevance of the "
             "skills and experience, and the professionalism of the presentation. After providing the score, please "
-            "summarize the strengths, areas for improvement, and provide a final recommendation:\n\n"
+            "summarize the strengths, recommendations for improvement, and provide final feedback:\n\n"
             f"{text}"
         )
 
@@ -73,7 +73,7 @@ def extract_score(analysis):
 def format_analysis(analysis, score):
     strengths = ""
     recommendations = ""
-    overall_feedback = ""
+    feedback = ""
 
     lines = analysis.split('\n')
 
@@ -82,37 +82,36 @@ def format_analysis(analysis, score):
         line = line.strip()
         if "Strengths:" in line:
             current_section = "strengths"
-            strengths += f"<strong>{line}</strong><ul>"
-        elif "Recommendations:" in line or "Areas for Improvement:" in line:
+            strengths += f"<strong>{line}</strong><ol style='list-style-type:none;'>"
+        elif "Recommendations for Improvement:" in line:
             if current_section == "strengths":
-                strengths += "</ul>"
+                strengths += "</ol>"
             current_section = "recommendations"
-            recommendations += f"<strong>{line}</strong><ol>"
-        elif "Overall Feedback:" in line:
+            recommendations += f"<strong>{line}</strong><ol style='list-style-type:none;'>"
+        elif "Feedback:" in line:
             if current_section == "recommendations":
                 recommendations += "</ol>"
-            current_section = "overall_feedback"
-            overall_feedback += f"<strong>{line}</strong><p>"
+            current_section = "feedback"
+            feedback += f"<strong>{line}</strong><p>"
         else:
             if current_section == "strengths":
                 strengths += f"<li>{line}</li>"
             elif current_section == "recommendations":
                 recommendations += f"<li>{line}</li>"
-            elif current_section == "overall_feedback":
-                overall_feedback += f"{line} "
+            elif current_section == "feedback":
+                feedback += f"{line} "
 
     if strengths:
-        strengths += "</ul>"
+        strengths += "</ol>"
     if recommendations:
         recommendations += "</ol>"
-    if overall_feedback:
-        overall_feedback += "</p>"
+    if feedback:
+        feedback += "</p>"
 
     formatted_analysis = (
-        f"<strong>Overall Profile Score:</strong> {score}<br><br>"
-        f"{strengths}<br><br>"
-        f"{recommendations}<br><br>"
-        f"{overall_feedback}"
+        f"<div class='section'><div class='box'>{strengths}</div></div>"
+        f"<div class='section'><div class='box'>{recommendations}</div></div>"
+        f"<div class='section'><div class='box'>{feedback}</div></div>"
     )
 
     return formatted_analysis
@@ -124,6 +123,12 @@ def add_header(response):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
+
+
 
 
 
