@@ -3,31 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkedIn Profile Analysis</title>
+    <title>LinkedIn Profile Evaluator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>LinkedIn Profile Score</h1>
-        </header>
-        <div class="content">
-            <section class="upload-section">
-                <h2>Upload your LinkedIn profile PDF</h2>
-                <form action="/" method="POST" enctype="multipart/form-data">
-                    <input type="file" name="file" accept="application/pdf">
-                    <button type="submit">Upload and Analyze</button>
-                </form>
-                <p>Ensure your file is the correct LinkedIn profile PDF.</p>
-            </section>
-            <section class="result-section">
-                <h2>Analysis Result</h2>
-                <div class="result-content">
-                    {{ result|safe }}
-                </div>
-            </section>
-        </div>
+        <h1>LinkedIn Profile Evaluator</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <button type="submit">Upload and Analyze</button>
+        </form>
+        <p>Ensure your file is the correct LinkedIn profile PDF.</p>
+
+        <h2>How to Download Your LinkedIn Profile as a PDF:</h2>
+        <p>LinkedIn app does not support profile download in PDF. Log in to a browser and download the PDF using the following steps:</p>
+        <ol>
+            <li>Go to your LinkedIn profile.</li>
+            <li>Click on the "More" button (three dots) located below your profile photo and headline.</li>
+            <li>Select "Save to PDF" from the dropdown menu.</li>
+            <li>Your profile will be downloaded as a PDF file. Upload this file here for analysis.</li>
+        </ol>
+
+        {% if result %}
+            <h2>Analysis Result</h2>
+            <div class="section">
+                <p><strong>Overall Profile Score:</strong> {{ score }}</p>
+            </div>
+            <div class="section">
+                {{ result | safe }}
+            </div>
+        {% endif %}
     </div>
 </body>
 </html>
+
+
+
 
