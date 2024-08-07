@@ -3,11 +3,11 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - main
+      - master
       - new-feature-branch
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build:
