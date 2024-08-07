@@ -75,7 +75,7 @@ This project uses GitHub Actions for Continuous Integration (CI) and Continuous 
 ### Deployment
 
 - Tool: Render
-- Webpage link: https://linkedin-profile-evaluator.onrender.com/
+- Web link: https://linkedin-profile-evaluator.onrender.com/
 
 ### Monitoring and Alerts
 
