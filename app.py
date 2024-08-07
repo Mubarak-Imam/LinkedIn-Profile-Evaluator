@@ -70,6 +70,7 @@ def extract_score(analysis):
     else:
         return "N/A"
 
+# Extract overall score
 def format_analysis(analysis, score):
     strengths = ""
     recommendations = ""
