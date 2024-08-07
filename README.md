@@ -78,6 +78,11 @@ This project uses GitHub Actions for Continuous Integration (CI) and Continuous 
 - Metric: Uptime and Response Time
 - Alerts: Email notifications for downtime or performance issues
 
+### Deployment
+
+- Tool: Render
+- Webpage link: https://linkedin-profile-evaluator.onrender.com/
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
