@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,31 +9,34 @@
 <body>
     <div class="container">
         <h1>LinkedIn Profile Evaluator</h1>
-        <form action="/" method="post" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data">
             <input type="file" name="file">
             <button type="submit">Upload and Analyze</button>
         </form>
         <p>Ensure your file is the correct LinkedIn profile PDF.</p>
-
         <h2>How to Download Your LinkedIn Profile as a PDF:</h2>
-        <p>LinkedIn app does not support profile download in PDF. Log in to a browser and download the PDF using the following steps:</p>
         <ol>
             <li>Go to your LinkedIn profile.</li>
             <li>Click on the "More" button (three dots) located below your profile photo and headline.</li>
             <li>Select "Save to PDF" from the dropdown menu.</li>
             <li>Your profile will be downloaded as a PDF file. Upload this file here for analysis.</li>
+            <li>Note: LinkedIn app does not support profile download in PDF. Log in to a browser and download.</li>
         </ol>
-
-        {% if result %}
-            <h2>Analysis Result</h2>
-            <div class="section">
-                <p><strong>Overall Profile Score:</strong> {{ score }}</p>
-            </div>
-            <div class="section">
-                {{ result | safe }}
-            </div>
-        {% endif %}
+        <div class="result">
+            {% if score %}
+                <h2>Analysis Result</h2>
+                <div class="section">
+                    <strong>Overall Profile Score:</strong> {{ score }}
+                </div>
+                <div class="section">
+                    {{ result|safe }}
+                </div>
+            {% endif %}
+        </div>
     </div>
+    <footer style="text-align: center; margin-top: 20px;">
+        <p>Created by <a href="https://www.linkedin.com/in/mubarak-imam/" target="_blank">Mubarak Imam</a></p>
+    </footer>
 </body>
 </html>
 
