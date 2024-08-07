@@ -72,16 +72,16 @@ This project uses GitHub Actions for Continuous Integration (CI) and Continuous 
   3. Install dependencies
   4. Deploy to Render
 
+### Deployment
+
+- Tool: Render
+- Webpage link: https://linkedin-profile-evaluator.onrender.com/
+
 ### Monitoring and Alerts
 
 - Tool: UptimeRobot
 - Metric: Uptime and Response Time
 - Alerts: Email notifications for downtime or performance issues
-
-### Deployment
-
-- Tool: Render
-- Webpage link: https://linkedin-profile-evaluator.onrender.com/
 
 ## License
 
