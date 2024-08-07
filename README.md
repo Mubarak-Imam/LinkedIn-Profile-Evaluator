@@ -48,6 +48,36 @@ To run this application locally, follow these steps:
 2. Upload your LinkedIn profile PDF using the file upload form.
 3. Click "Upload and Analyze" to receive your profile evaluation.
 
+## CI/CD Pipeline
+
+This project uses GitHub Actions for Continuous Integration (CI) and Continuous Deployment (CD). The CI pipeline runs automated tests on every push to the repository, while the CD pipeline deploys the application to Render on every push to the main branch.
+
+### CI Pipeline
+
+- Tool: GitHub Actions
+- Trigger: Pushes to `main` and `new-feature-branch` branches, and pull requests to `main`
+- Steps:
+  1. Checkout code
+  2. Set up Python environment
+  3. Install dependencies
+  4. Run tests
+
+### CD Pipeline
+
+- Tool: GitHub Actions
+- Trigger: Pushes to `main` branch
+- Steps:
+  1. Checkout code
+  2. Set up Python environment
+  3. Install dependencies
+  4. Deploy to Render
+
+### Monitoring and Alerts
+
+- Tool: UptimeRobot
+- Metric: Uptime and Response Time
+- Alerts: Email notifications for downtime or performance issues
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
