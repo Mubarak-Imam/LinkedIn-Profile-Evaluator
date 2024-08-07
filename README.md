@@ -1,6 +1,6 @@
 # LinkedIn Profile Evaluator
 
-The LinkedIn Profile Evaluator is a web application that analyzes LinkedIn profile PDFs and provides a comprehensive evaluation, including an overall profile score, strengths, areas for improvement, and final recommendations.
+The LinkedIn Profile Evaluator is a web application that analyzes LinkedIn profile PDFs and provides a comprehensive evaluation, including an overall profile score, strengths, recommendations for improvement, and final feedback.
 
 ## Features
 
