@@ -89,10 +89,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contributing
 
-1) Purva Gevaria 
-2) Bhumika Pathak 
-3) Ricardo Patrocinio 
-4) Mubarak Imam 
+1) Ricardo Patrocinio 
+2) Mubarak Imam 
 
 ## Contact
 
